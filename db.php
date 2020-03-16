@@ -13,9 +13,9 @@ class Database
 
     private function __construct()
     {
-        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME;
+        $dsn = 'mysql:host=' . Config::get('mysql.host') . ';dbname=' . Config::get('mysql.database');
         try {
-            $this->pdo = new PDO($dsn, DB_USER, DB_PASS);
+            $this->pdo = new PDO($dsn, Config::get('mysql.username'), Config::get('mysql.password'));
             $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         } catch (PDOException $e) {
             die($e->getMessage());
