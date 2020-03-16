@@ -15,7 +15,9 @@ $GLOBALS['config'] = [
         'password'  => '',
         'database'  => 'web_db'
     ],
-    'url' => 'localhost'
+    'session' => [
+        'token_name' => 'token'
+    ]
 ];
 
 class Config{
